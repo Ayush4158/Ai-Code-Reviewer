@@ -7,7 +7,6 @@ import axios from 'axios'
 import Markdown from 'react-markdown'
 
 function App() {
-  const [count, setCount] = useState(0)
   const [code, setCode] = useState(``)
 
   const [review, setReview] = useState('')  
@@ -35,10 +34,10 @@ function App() {
               style={{
                 fontFamily: '"Fira code", "Fira Mono", monospace',
                 fontSize: 16,
-                border: "1px solid rgb(205, 205, 253)",
                 borderRadius: "5px",
                 height: "100%",
                 width: "100%",
+                overflow: "auto"
               }}
             />
           </div>
@@ -46,6 +45,8 @@ function App() {
         </div>
         <div className="right">
           <Markdown>{review}</Markdown>
+
+          <a href='http://localhost:3000' className="review" onClick={reviewCode}>Back</a>
         </div>
       </main>
     </>

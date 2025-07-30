@@ -19,16 +19,23 @@ main {
   gap: 1rem;
 }
 
-main .left,
+main .left{
+  height: 100%;
+  flex-basis: 50%;
+  border-radius: 0.7rem;
+  position: relative;
+}
 main .right {
   height: 100%;
   flex-basis: 50%;
   border-radius: 0.7rem;
+  position: relative;
 }
 
 main .left {
   background-color: #000000;
-  position: relative;
+  overflow-y: auto;
+
 }
 
 .left .code,
@@ -44,7 +51,7 @@ main .left {
 main .left .review {
   position: absolute;
   bottom: 1rem;
-  right: 1rem;
+  right: 4rem;
   background-color: rgb(205, 205, 253);
   color: #000000;
   padding: 0.5rem 2rem;
@@ -63,5 +70,21 @@ main .right {
   background-color: #343434;
   padding: 1rem 2rem;
   font-size: 1.5rem;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+main .right .review {
+  position: sticky;
+  bottom: 0.04rem;
+  right: 1rem;
+  background-color: #000000;
+  color: rgb(205, 205, 253);
+  font-size: medium;
+  padding: 0.6rem 2.7rem;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 0.7rem;
+  float: right;
 }
